@@ -1,26 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-
-interface ProductListProps{
+interface ProductListProps {
 
 }
-const initialProducts = [
-{ id: 1, title: 'Scape ', price: 100},
-{ id: 2, title: 'Hunter', price: 200 },
-{ id: 3, title: 'War', price: 300 },    
+interface Product {
+    id: string;
+    title: string;
+    price: number;
+}
+const initialProducts: Product[] = [
+    { id: '1f', title: 'Scape ', price: 100 },
+    { id: '2f', title: 'Hunter', price: 200 },
+    { id: '3f', title: 'War', price: 300 },
 ]
-const ProductList: React.FC<ProductListProps> = ({}) => {
- 
-  return (
-    <div>
-        <label htmlFor=""> Games List</label>
-        {initialProducts.map((product)=>(
-             <div key={product.id}>
-                <span >${product.title} : ${product.price}</span>
-                </div>
-                )) }
-    </div>
-  );
+const ProductList: React.FC<ProductListProps> = ({ }) => {
+    const [Products, setProducts] = useState<Product[]>(initialProducts);
+
+    return (
+        <div>
+            <label htmlFor=""> Games List</label>
+            {Products.map((product) => <div key={product.id}>
+                <span >{`${product.title} : ${product.price}`}</span>
+            </div>)}
+
+            <button onClick={() => setProducts(prevProducts => [{
+                id: '4f',
+                title: 'Half Life',
+                price: 101
+            }, ...prevProducts]
+            )}>Add Game</button>
+        </div >
+    );
 };
 
 export default ProductList;

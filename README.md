@@ -1,3 +1,7 @@
+## Objective:
+
+Learn how to use Redux to manage the state of your app. We will use TypeScript and ReactJS to build simple shopping cart app. My aim is to explain how you can build app with Redux in 2021 with the latest and the best patterns. We will use hooks and slices as our approach to build our store and connect Redux to our ReactJS app. 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

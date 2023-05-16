@@ -13,7 +13,7 @@ const initialProducts: Product[] = [
     { id: '2f', title: 'Hunter', price: 200 },
     { id: '3f', title: 'War', price: 300 },
 ]
-const ProductList: React.FC<ProductListProps> = ({ }) => {
+const ProductList: React.FC<ProductListProps> = ({}) => {
     const [Products, setProducts] = useState<Product[]>(initialProducts);
 
     return (

@@ -1,4 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { RootState } from "../store";
+
 
 export interface Product {
     id: string;
@@ -16,8 +18,7 @@ const productSlice = createSlice({
     initialState,
     reducers: {
         addProduct: (state, action: PayloadAction<Product>) => {
-            return [action.payload, ...state,]
-          
+            state.push(action.payload)
 
         }
     }
@@ -25,4 +26,4 @@ const productSlice = createSlice({
 })
 export const { addProduct } = productSlice.actions;
 export default productSlice.reducer;
-export const getProductsSelector = (state: Rootstate) => state.products;
+export const getProductsSelector = (state: RootState) => state.products;
